@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adrahoto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/05 23:27:50 by adrahoto          #+#    #+#             */
+/*   Updated: 2025/12/05 23:27:51 by adrahoto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-char *ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	char *p;
+	char	*p;
 
 	p = NULL;
-	while(*str)
+	while (*str)
 	{
 		if (*str == (char)c)
 			p = str;
@@ -16,11 +28,11 @@ char *ft_strrchr(const char *str, int c)
 	return (p);
 }
 /*
-int main(void)
+int	main(void)
 {
 	char myStr[] = "Hello World";
 	char *myPtr = ft_strrchr(myStr, 'l');
 	if (myPtr != NULL)
-  		printf("%s\n", myPtr);
+		printf("%s\n", myPtr);
 	return (0);
 }*/

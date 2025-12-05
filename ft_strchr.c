@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adrahoto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/05 23:25:06 by adrahoto          #+#    #+#             */
+/*   Updated: 2025/12/05 23:25:10 by adrahoto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-char *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	while (*str)
 	{
@@ -13,7 +25,7 @@ char *ft_strchr(const char *str, int c)
 	return (NULL);
 }
 /*
-int main(void)
+int	main(void)
 {
 	char myStr[] = "Hello World";
 	char *myPtr = ft_strchr(myStr, 'W');

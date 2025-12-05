@@ -1,6 +1,17 @@
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adrahoto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/05 23:13:04 by adrahoto          #+#    #+#             */
+/*   Updated: 2025/12/05 23:13:07 by adrahoto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
 
 int	ft_atoi(const char *str)
 {
@@ -29,7 +40,7 @@ int	ft_atoi(const char *str)
 	return (num);
 }
 /*
-int main(void)
+int	main(void)
 {
 	char str[] = "    --24 degrees";
 	int amount = ft_atoi(str);
