@@ -6,7 +6,7 @@
 /*   By: adrahoto <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 23:27:50 by adrahoto          #+#    #+#             */
-/*   Updated: 2025/12/05 23:27:51 by adrahoto         ###   ########.fr       */
+/*   Updated: 2025/12/06 00:09:39 by adrahoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ char	*ft_strrchr(const char *str, int c)
 	while (*str)
 	{
 		if (*str == (char)c)
-			p = str;
+			p = (char *)str;
 		str++;
 	}
 	if (c == '\0')
-		return (str);
+		return ((char *)str);
 	return (p);
 }
 /*

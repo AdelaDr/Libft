@@ -6,7 +6,7 @@
 /*   By: adrahoto <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 23:28:14 by adrahoto          #+#    #+#             */
-/*   Updated: 2025/12/05 23:30:57 by adrahoto         ###   ########.fr       */
+/*   Updated: 2025/12/06 00:31:01 by adrahoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,13 @@ int	ft_strlen(const char *str)
 
 int	ft_find_start(char const *s1, char const *set)
 {
+	int	start_def;
 	int	i;
 	int	j;
 
+	start_def = 0;
+	if (!set || !*set)
+		return start_def;
 	i = 0;
 	while (s1[i])
 	{
@@ -51,9 +55,13 @@ int	ft_find_start(char const *s1, char const *set)
 
 int	ft_find_end(char const *s1, char const *set)
 {
+	int	end_def;
 	int	i;
 	int	j;
 
+	end_def = ft_strlen(s1) - 1;
+	if (!set || !*set)
+		return end_def;
 	i = ft_strlen(s1) - 1;
 	while (i >= 0)
 	{

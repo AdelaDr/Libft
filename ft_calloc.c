@@ -6,12 +6,13 @@
 /*   By: adrahoto <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 23:20:36 by adrahoto          #+#    #+#             */
-/*   Updated: 2025/12/05 23:32:15 by adrahoto         ###   ########.fr       */
+/*   Updated: 2025/12/06 00:20:51 by adrahoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 void	*ft_calloc(size_t items, size_t size)
 {
@@ -19,6 +20,8 @@ void	*ft_calloc(size_t items, size_t size)
 	unsigned char	*ptr;
 	size_t			i;
 
+	if (size != 0 && items > SIZE_MAX / size)
+		return (NULL);
 	total = items * size;
 	ptr = malloc(total);
 	if (!ptr)

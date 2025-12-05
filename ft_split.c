@@ -6,7 +6,7 @@
 /*   By: adrahoto <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 23:24:30 by adrahoto          #+#    #+#             */
-/*   Updated: 2025/12/05 23:24:36 by adrahoto         ###   ########.fr       */
+/*   Updated: 2025/12/06 00:07:12 by adrahoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	**ft_split(char const *s, char c)
 	w = 0;
 	while (s[i])
 	{
-		c_formatter_42-- help if (s[i] != c)
+		if (s[i] != c)
 		{
 			j = i;
 			while (s[j] && s[j] != c)
