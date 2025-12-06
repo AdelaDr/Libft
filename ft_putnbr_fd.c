@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-char	*write_min(void)
+static char	*write_min(void)
 {
 	char	*res;
 
@@ -37,7 +37,7 @@ char	*write_min(void)
 	return (res);
 }
 
-int	count_digits(int n)
+static int	count_digits(int n)
 {
 	int	count;
 
@@ -52,7 +52,7 @@ int	count_digits(int n)
 	return (count);
 }
 
-char	*num_write(int n, int digit_num, int minus)
+static char	*num_write(int n, int digit_num, int minus)
 {
 	char	*res;
 	char	digit;
@@ -76,7 +76,7 @@ char	*num_write(int n, int digit_num, int minus)
 	return (res);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_itoa(int n)
 {
 	int		digit_num;
 	char	*res;

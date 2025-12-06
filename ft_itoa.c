@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*write_min(void)
+static char	*write_min(void)
 {
 	char	*res;
 
@@ -35,7 +35,7 @@ char	*write_min(void)
 	return (res);
 }
 
-int	count_digits(int n)
+static int	count_digits(int n)
 {
 	int	count;
 
@@ -50,7 +50,7 @@ int	count_digits(int n)
 	return (count);
 }
 
-char	*num_write(int n, int digit_num, int minus)
+static char	*num_write(int n, int digit_num, int minus)
 {
 	char	*res;
 	char	digit;

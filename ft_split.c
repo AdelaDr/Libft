@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_wordcount(char const *s, char c)
+static int	ft_wordcount(char const *s, char c)
 {
 	int	count;
 	int	i;
@@ -29,7 +29,7 @@ int	ft_wordcount(char const *s, char c)
 	return (count);
 }
 
-char	*ft_worddup(char const *s, int start, int end)
+static char	*ft_worddup(char const *s, int start, int end)
 {
 	char	*word;
 	int		i;

@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	size_t	len;
 
@@ -23,7 +23,7 @@ size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-void	ft_strcpy_at(char *dest, const char *src, size_t start)
+static void	ft_strcpy_at(char *dest, const char *src, size_t start)
 {
 	size_t	i;
 
