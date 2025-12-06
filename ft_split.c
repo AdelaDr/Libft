@@ -66,7 +66,8 @@ char	**ft_split(char const *s, char c)
 			res[w++] = ft_worddup(s, i, j);
 			i = j;
 		}
-		else i++;
+		else
+			i++;
 	}
 	res[w] = NULL;
 	return (res);
