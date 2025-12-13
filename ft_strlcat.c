@@ -14,32 +14,44 @@
 #include <stdio.h>
 #include <string.h>
 
+static size_t	ft_strlen(const char *str)
+{
+	size_t	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
+	size_t	dlen;
+	size_t	slen;
 	size_t	i;
-	size_t	j;
-	size_t	dest_len;
-	size_t	src_len;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0' && i < size)
-		i++;
-	dest_len = i;
-	while (src[j] != '\0')
-		j++;
-	src_len = j;
-	if (size <= dest_len)
-		return (size + src_len);
-	j = 0;
-	while (src[j] != '\0' && dest_len + j < size - 1)
+	if (!dest && size == 0)
 	{
-		dest[dest_len + j] = src[j];
-		j++;
+		if (src)
+			return (ft_strlen(src));
+		return (0);
 	}
-	dest[dest_len + j] = '\0';
-	return (dest_len + src_len);
+	dlen = 0;
+	while (dlen < size && dest[dlen])
+		dlen++;
+	slen = ft_strlen(src);
+	if (dlen == size)
+		return (size + slen);
+	i = 0;
+	while (src[i] && dlen + i < size - 1)
+	{
+		dest[dlen + i] = src[i];
+		i++;
+	}
+	dest[dlen + i] = '\0';
+	return (dlen + slen);
 }
+
 /*
 int	main(void)
 {
