@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by <adrahoto>,*
+*This project has been created as part of the 42 curriculum by adrahoto.*
 
 [![C](https://img.shields.io/badge/language-C-555?style=flat&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![42 Project](https://img.shields.io/badge/42-Libft-blue)](https://www.42.fr)
@@ -25,13 +25,14 @@ Functions include:
 ## Automatic Compilation
 Clone and compile:
 ```bash
-git clone <repo_url>
+git clone https://github.com/AdelaDr/Libft.git
 cd libft
 make
 ```
 
 Generates libft.a automatically.
-Usage in Projects
+
+# Usage in Projects
 
 Include the header and link the library:
 
@@ -43,41 +44,42 @@ Include the header and link the library:
 gcc -Wall -Wextra -Werror main.c libft.a -o my_program
 ```
 
-Resources
+# Resources
 
-    42 Libft PDF
+- [C Standard Library Docs](https://man7.org/linux/man-pages/man3/)
 
-C Standard Library Docs
+- [TutorialsPoint](https://www.tutorialspoint.com)
 
-    Tutorials and articles on C fundamentals
+- [W3Schools](https://www.w3schools.com)
 
-    AI assistance: used for structuring code, logic explanation, and optimization suggestions, not direct function implementation.
+- AI assistance: used for structuring code, logic explanation, and optimization suggestions, not direct function implementation.
 
-Library Details
+# Library Details
 
-    Norm-compliant and memory-safe
+- Norm-compliant and memory-safe
 
-    Functions grouped: string, memory, character, list, and number utilities
+- Functions grouped: string, memory, character, list, and number utilities
 
-    Modular design for easy reuse in C projects
+- Modular design for easy reuse in C projects
 
-Usage Example
+# Usage Example
 
 ```bash
 #include "libft.h"
 #include <stdio.h>
 
-int main(void) {
+int main(void) 
+{
     char str[] = "Hello, 42!";
     printf("%zu\n", ft_strlen(str));
     return 0;
 }
 ```
 
-Technical Choices
+# Technical Choices
 
-    Written entirely in standard C
+- Written entirely in standard C
 
-    Consistent error handling
+- Consistent error handling
 
-    Modular and maintainable design
+- Modular and maintainable design
