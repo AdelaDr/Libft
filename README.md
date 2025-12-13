@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by <adrahoto>
+*This project has been created as part of the 42 curriculum by <adrahoto>,*
 
 [![C](https://img.shields.io/badge/language-C-555?style=flat&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![42 Project](https://img.shields.io/badge/42-Libft-blue)](https://www.42.fr)
@@ -28,15 +28,20 @@ Clone and compile:
 git clone <repo_url>
 cd libft
 make
+```
 
 Generates libft.a automatically.
 Usage in Projects
 
 Include the header and link the library:
 
+```bash
 #include "libft.h"
+```
 
+```bash
 gcc -Wall -Wextra -Werror main.c libft.a -o my_program
+```
 
 Resources
 
@@ -58,6 +63,7 @@ Library Details
 
 Usage Example
 
+```bash
 #include "libft.h"
 #include <stdio.h>
 
@@ -66,6 +72,7 @@ int main(void) {
     printf("%zu\n", ft_strlen(str));
     return 0;
 }
+```
 
 Technical Choices
 
