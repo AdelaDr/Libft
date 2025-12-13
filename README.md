@@ -30,7 +30,7 @@ cd libft
 make
 ```
 
-Generates libft.a automatically.
+Generates `libft.a` automatically.
 
 # Usage in Projects
 
