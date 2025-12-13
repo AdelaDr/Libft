@@ -32,7 +32,7 @@ make
 
 Generates `libft.a` automatically.
 
-# Usage in Projects
+## Usage in Projects
 
 Include the header and link the library:
 
