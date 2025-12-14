@@ -18,10 +18,13 @@ char	*ft_strnstr(const char *str, const char *c, size_t n)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = 0;
+	if (n == 0)
+		return (NULL);
+	if (!str)
+		return (NULL);
 	if (*c == '\0')
 		return ((char *)str);
+	i = 0;
 	while (str[i] != '\0' && i < n)
 	{
 		j = 0;
