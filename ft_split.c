@@ -44,6 +44,19 @@ static char	*ft_worddup(char const *s, int start, int end)
 	return (word);
 }
 
+static void	ft_free_split(char **res, int w)
+{
+	int	i;
+
+	i = 0;
+	while (i < w)
+	{
+		free(res[i]);
+		i++;
+	}
+	free(res);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
@@ -63,7 +76,13 @@ char	**ft_split(char const *s, char c)
 			j = i;
 			while (s[j] && s[j] != c)
 				j++;
-			res[w++] = ft_worddup(s, i, j);
+			res[w] = ft_worddup(s, i, j);
+			if (!res[w])
+			{
+				ft_free_split(res, w);
+				return (NULL);
+			}
+			w++;
 			i = j;
 		}
 		else
