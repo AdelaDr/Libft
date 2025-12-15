@@ -18,14 +18,14 @@ char	*ft_strnstr(const char *str, const char *c, size_t n)
 	size_t	i;
 	size_t	j;
 
+	if (c && *c == '\0')
+		return ((char *)str);
 	if (n == 0)
 		return (NULL);
 	if (!str)
 		return (NULL);
-	if (*c == '\0')
-		return ((char *)str);
 	i = 0;
-	while (str[i] != '\0' && i < n)
+	while (str[i] && i < n)
 	{
 		j = 0;
 		while (str[i + j] == c[j] && (i + j) < n)
@@ -38,6 +38,7 @@ char	*ft_strnstr(const char *str, const char *c, size_t n)
 	}
 	return (NULL);
 }
+
 /*
 int	main(void)
 {
