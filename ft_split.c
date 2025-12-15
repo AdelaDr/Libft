@@ -22,38 +22,43 @@ static int	ft_wordcount(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+		while (s[i] == c)
+			i++;
+		if (s[i])
 			count++;
-		i++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
 	return (count);
 }
 
-static char	*ft_worddup(char const *s, int start, int end)
+static char	*ft_worddup(char const *s, int *i, char c)
 {
 	char	*word;
-	int		i;
+	int		start;
+	int		len;
 
-	word = malloc(sizeof(char) * (end - start + 1));
+	start = *i;
+	len = 0;
+	while (s[*i] && s[*i] != c)
+	{
+		len++;
+		(*i)++;
+	}
+	word = malloc(sizeof(char) * (len + 1));
 	if (!word)
 		return (NULL);
-	i = 0;
-	while (start < end)
-		word[i++] = s[start++];
-	word[i] = '\0';
+	while (len--)
+		word[len] = s[start + len];
+	start = *i - start;
+	word[start] = '\0';
 	return (word);
 }
 
 static void	ft_free_split(char **res, int w)
 {
-	int	i;
-
-	i = 0;
-	while (i < w)
-	{
-		free(res[i]);
-		i++;
-	}
+	while (w--)
+		free(res[w]);
 	free(res);
 }
 
@@ -61,7 +66,6 @@ char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	int		i;
-	int		j;
 	int		w;
 
 	res = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
@@ -71,26 +75,20 @@ char	**ft_split(char const *s, char c)
 	w = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
-		{
-			j = i;
-			while (s[j] && s[j] != c)
-				j++;
-			res[w] = ft_worddup(s, i, j);
-			if (!res[w])
-			{
-				ft_free_split(res, w);
-				return (NULL);
-			}
-			w++;
-			i = j;
-		}
-		else
+		while (s[i] == c)
 			i++;
+		if (s[i])
+		{
+			res[w] = ft_worddup(s, &i, c);
+			if (!res[w])
+				return (ft_free_split(res, w), NULL);
+			w++;
+		}
 	}
 	res[w] = NULL;
 	return (res);
 }
+
 /*
 int	main(void)
 {
